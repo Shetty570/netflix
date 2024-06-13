@@ -1,8 +1,15 @@
+import firebase from "firebase/app";
+import "firebase/auth"; // Import Firebase products you need
+
 const firebaseConfig = {
-    apiKey: "AIzaSyCKyM9V09pUKWbu54uu-bhhm5vR1wklLy4",
-    authDomain: "netflix-96c37.firebaseapp.com",
-    projectId: "netflix-96c37",
-    storageBucket: "netflix-96c37.appspot.com",
-    messagingSenderId: "914297670791",
-    appId: "1:914297670791:web:fc911396e5d1a05d8c7c22"
-  };
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+};
+
+firebase.initializeApp(firebaseConfig);
+
+export default firebase;
