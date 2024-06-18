@@ -1,5 +1,6 @@
 import React, {useState , useEffect} from 'react';
 import './Nav.css';
+import logo from "./asset/Netflix_Logo_PMS.png"
 
 function Nav() {
 
@@ -22,26 +23,12 @@ function Nav() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   return (
     <div className={`nav ${show && `nav_black`}`}>
       <div className="nav_contents">
         <img
           className="nav_logo"
-          src="https://c0.klipartz.com/pngpicture/26/116/gratis-png-logotipo-de-netflix-programa-de-television-de-netflix-transmision-de-peliculas-multimedia-logotipo-de-netflix-thumbnail.png"
+          src={logo}
           alt="Logo"
         />
         <img
