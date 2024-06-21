@@ -1,5 +1,6 @@
-import firebase from "firebase/app";
-import "firebase/auth"; // Import Firebase products you need
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -10,6 +11,10 @@ const firebaseConfig = {
   appId: process.env.REACT_APP_FIREBASE_APP_ID,
 };
 
-firebase.initializeApp(firebaseConfig);
+const firebaseApp = initializeApp(firebaseConfig);
 
-export default firebase;
+const db = getFirestore(firebaseApp);
+const auth = getAuth(firebaseApp);
+
+export { auth };
+export default db;
